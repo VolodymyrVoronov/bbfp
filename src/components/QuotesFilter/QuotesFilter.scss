@@ -1,0 +1,59 @@
+$orange-color: #efc326;
+$black-color: #000000;
+$gray-color-transparent: #c5c5c581;
+$black-color-transparent: #0000003b;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.quotes-filter-container {
+  display: flex;
+  flex-direction: row;
+
+  @include reset-m-p;
+  margin-bottom: 15px;
+
+  &__filter-btn {
+    display: block;
+    flex-grow: 1;
+
+    @include reset-m-p;
+    padding: 5px 5px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+    border: none;
+    outline: none;
+
+    transition: 0.5s ease;
+
+    &:hover {
+      color: $black-color;
+      background-color: $orange-color;
+
+      box-shadow: 0px 7px 0px 0px $black-color;
+      cursor: pointer;
+
+      transition: 0.5s ease;
+    }
+  }
+}
+
+.active-filter-btn {
+  color: $black-color;
+  background-color: $orange-color;
+
+  box-shadow: 0px 7px 0px 0px $black-color;
+
+  &:hover {
+    cursor: default;
+  }
+}

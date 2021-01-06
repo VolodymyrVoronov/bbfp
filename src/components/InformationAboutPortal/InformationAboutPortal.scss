@@ -1,0 +1,131 @@
+$orange-color: #efc326;
+$black-color: #000000;
+$gray-color-transparent: #c5c5c59f;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin elements-position {
+  position: absolute;
+  display: block;
+
+  top: 3px;
+  right: 13px;
+
+  width: 5px;
+  height: 5px;
+
+  font-size: 10px;
+  line-height: 14px;
+
+  color: $orange-color;
+}
+
+.information-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 768px;
+
+  @include reset-m-p;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 30px 20px;
+
+  background-color: $gray-color-transparent;
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+
+    @include reset-m-p;
+    padding: 0px 20px;
+
+    font-family: 'Source Serif Pro', serif;
+    font-size: 56px;
+    line-height: 58px;
+    font-weight: 600;
+    text-align: auto;
+
+    word-spacing: 5px;
+  }
+
+  &__text {
+    display: block;
+
+    @include reset-m-p;
+    margin-top: 25px;
+    padding: 0px 20px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+    text-align: auto;
+
+    word-spacing: 0px;
+
+    &--highlighted {
+      display: inline;
+
+      @include reset-m-p;
+      padding: 2px 7px;
+
+      color: $orange-color;
+
+      background-color: $black-color;
+    }
+  }
+}
+
+.title {
+
+  &__highlighted-one,
+  &__highlighted-two,
+  &__highlighted-three {
+    position: relative;
+    display: inline;
+
+    @include reset-m-p;
+    padding: 5px 6px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 52px;
+    line-height: 54px;
+    font-weight: 500;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+  }
+
+  &__highlighted-one {
+    position: relative;
+
+    &::after {
+      content: '35';
+      @include elements-position;
+    }
+  }
+
+  &__highlighted-two {
+    position: relative;
+
+    &::after {
+      content: '56';
+      @include elements-position;
+    }
+  }
+
+  &__highlighted-three {
+    position: relative;
+
+    &::after {
+      content: '84';
+      @include elements-position;
+    }
+  }
+}

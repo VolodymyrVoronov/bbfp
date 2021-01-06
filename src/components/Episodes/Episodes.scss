@@ -1,0 +1,112 @@
+$orange-color: #efc326;
+$black-color: #000000;
+$gray-color-transparent: #c5c5c581;
+$black-color-transparent: #0000003b;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.episode-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  height: 100%;
+
+  @include reset-m-p;
+  padding: 10px;
+
+  user-select: text;
+
+  overflow: auto;
+
+  &__btn-block {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__preloader {
+    display: block;
+
+    margin: 15px 0;
+  }
+
+  &__load-more-btn {
+    display: block;
+
+    @include reset-m-p;
+    margin: 10px 0;
+    padding: 5px 35px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    color: $black-color;
+
+    background-color: $orange-color;
+    border: none;
+    outline: none;
+
+    transition: 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+
+      transition: 0.5s ease;
+    }
+  }
+}
+
+.episode {
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
+
+    @include reset-m-p;
+    margin: 5px;
+    padding: 10px;
+
+    background-color: $gray-color-transparent;
+  }
+
+  &__bold-text {
+    display: inline;
+
+    @include reset-m-p;
+    padding: 2px 5px;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+  }
+
+  &__title,
+  &__air-date,
+  &__episode-num,
+  &__season,
+  &__characters {
+    display: inline;
+
+    @include reset-m-p;
+    margin: 5px 0px;
+    padding: 2px 5px 2px 0px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+    text-align: left;
+
+    background-color: rgba(0, 0, 0, 0.10);
+  }
+}

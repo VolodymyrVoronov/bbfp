@@ -1,0 +1,254 @@
+$orange-color: #efc326;
+$black-color: #000000;
+$gray-color-transparent: #c5c5c581;
+$black-color-transparent: #0000003b;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin elements-position {
+  position: absolute;
+  display: block;
+
+  top: 3px;
+  right: 16px;
+
+  width: 5px;
+  height: 5px;
+
+  font-size: 10px;
+  line-height: 14px;
+
+  color: $orange-color;
+}
+
+.quotes-container {
+  // display: flex;
+
+  // @include reset-m-p;
+}
+
+.quotes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: 100%;
+
+  @include reset-m-p;
+  padding: 15px;
+  padding-bottom: 75px;
+
+  user-select: text;
+
+  &__left {
+    display: flex;
+
+    width: 29%;
+
+    @include reset-m-p;
+
+    background-color: $gray-color-transparent;
+  }
+
+  &__right {
+    display: flex;
+
+    width: 70%;
+
+    @include reset-m-p;
+
+    background-color: $gray-color-transparent;
+  }
+}
+
+.random-quote {
+  display: flex;
+  flex-direction: column;
+
+  @include reset-m-p;
+  padding: 5px;
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    align-self: center;
+
+    @include reset-m-p;
+    margin: 20px 0;
+
+    font-family: 'Source Serif Pro', serif;
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  &__title-one {
+    position: relative;
+    display: inline;
+
+    @include reset-m-p;
+    padding: 5px 6px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 500;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+
+    &::after {
+      content: '88';
+      @include elements-position;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    @include reset-m-p;
+    margin: 0 15px;
+    padding: 15px;
+
+    background-color: $black-color;
+  }
+
+  &__text {
+    display: flex;
+    align-items: flex-end;
+
+    @include reset-m-p;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+
+    color: $orange-color;
+  }
+
+  &__author {
+    display: block;
+
+    @include reset-m-p;
+    margin-top: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+
+    color: $orange-color;
+  }
+
+  &__get-quote-btn {
+    display: block;
+
+    @include reset-m-p;
+    margin: 20px 15px;
+    padding: 10px 25px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+    border: none;
+    outline: none;
+
+    transition: 0.5s ease;
+
+    &:hover {
+      box-shadow: 7px 7px 0px 0px rgba(239, 195, 38, 1);
+      cursor: pointer;
+
+      transition: 0.5s ease;
+    }
+  }
+}
+
+.quote-item {
+  display: flex;
+  flex-direction: column;
+
+  @include reset-m-p;
+
+  &__filter {
+    display: flex;
+    flex-direction: row;
+
+    @include reset-m-p;
+  }
+
+  &__quote-block {
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+
+  }
+}
+
+.quote-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include reset-m-p;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 32%;
+
+    @include reset-m-p;
+    margin: 5px;
+    padding: 15px;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+  }
+
+  &__text {
+    display: flex;
+    align-items: flex-end;
+
+    @include reset-m-p;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+
+    color: $orange-color;
+  }
+
+  &__author {
+    display: block;
+
+    @include reset-m-p;
+    margin-top: 15px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+
+    color: $orange-color;
+  }
+}

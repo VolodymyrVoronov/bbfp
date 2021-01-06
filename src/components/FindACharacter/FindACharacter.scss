@@ -1,0 +1,114 @@
+$orange-color: #efc326;
+$black-color: #000000;
+$gray-color-transparent: #c5c5c581;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.find-a-character-container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  @include reset-m-p;
+  margin: 15px;
+  padding: 20px;
+
+  background-color: $gray-color-transparent;
+
+  user-select: text;
+
+  overflow: auto;
+
+  &__preloader {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+  }
+}
+
+.input-field {
+  display: flex;
+  justify-content: center;
+
+  height: 60px;
+
+  @include reset-m-p;
+  margin: 0 auto;
+
+  &__input {
+    display: block;
+
+    height: 60px;
+    width: 350px;
+
+    @include reset-m-p;
+    margin-right: 12px;
+    padding: 10px 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 300;
+    color: $orange-color;
+
+    background-color: $black-color;
+
+    border: none;
+    outline: none;
+
+    &:focus {
+      outline: 5px solid $orange-color;
+    }
+  }
+
+  &__search-btn {
+    display: block;
+
+    @include reset-m-p;
+    padding: 0 15px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 400;
+    color: $orange-color;
+
+    background-color: $black-color;
+
+    border: none;
+    outline: none;
+
+    &:hover {
+      outline: 5px solid $orange-color;
+
+      cursor: pointer;
+    }
+
+    &:disabled {
+      color: #000000;
+      background-color: $gray-color-transparent;
+
+      &:hover {
+        outline: none;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include reset-m-p;
+
+}

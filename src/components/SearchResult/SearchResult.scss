@@ -1,0 +1,143 @@
+$orange-color: #efc326;
+$black-color: #000000;
+$gray-color-transparent: #c5c5c581;
+$black-color-transparent: #0000003b;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.search-result-container {
+  display: flex;
+
+  @include reset-m-p;
+}
+
+.search-result {
+  display: flex;
+  flex-direction: row;
+
+  width: 33%;
+
+  @include reset-m-p;
+  margin-bottom: auto;
+
+  &__container-more {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    @include reset-m-p;
+    margin: 15px 10px 0px 10px;
+    padding: 10px;
+
+    background-color: $black-color-transparent;
+  }
+
+  &__bold-text {
+    display: inline;
+
+    @include reset-m-p;
+    padding: 2px 5px;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+  }
+
+  &__name,
+  &__nickname,
+  &__occupation,
+  &__portrayed,
+  &__status,
+  &__appearance,
+  &__birthday {
+    display: inline;
+
+    @include reset-m-p;
+    margin: 5px 0px;
+    padding: 2px 5px 2px 0px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 400;
+    text-align: left;
+
+    background-color: rgba(0, 0, 0, 0.10);
+  }
+
+  &__photo {
+    display: block;
+
+    height: 250px;
+    width: 250px;
+
+    @include reset-m-p;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__more-info-btn {
+    display: block;
+
+    @include reset-m-p;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px 0;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+    border: none;
+    outline: none;
+
+    transition: 0.5s ease;
+
+    &:hover {
+      box-shadow: 5px 5px 0px 0px rgba(239, 195, 38, 1);
+      cursor: pointer;
+
+      transition: 0.5s ease;
+    }
+  }
+}
+
+.enter {
+  opacity: 0;
+}
+
+.enter-active {
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.exit {
+  opacity: 1;
+}
+
+.exit-active {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.exit-done {
+  opacity: 0;
+}

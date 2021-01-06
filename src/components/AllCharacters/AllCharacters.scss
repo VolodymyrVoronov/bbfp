@@ -1,0 +1,120 @@
+$orange-color: #efc326;
+$black-color: #000000;
+$gray-color-transparent: #c5c5c581;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.charcters-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include reset-m-p;
+
+  overflow: auto;
+
+  &__btn-block {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__preloader {
+    display: block;
+
+    margin: 15px 0;
+  }
+
+  &__load-more-btn {
+    display: block;
+
+    @include reset-m-p;
+    margin: 10px 0;
+    padding: 5px 35px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    color: $black-color;
+
+    background-color: $orange-color;
+    border: none;
+    outline: none;
+
+    transition: 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+
+      transition: 0.5s ease;
+    }
+  }
+}
+
+.characters-item {
+  display: flex;
+  flex-direction: column;
+
+  width: 31%;
+
+  @include reset-m-p;
+  margin: 15px 10px 0px 10px;
+  padding: 20px;
+
+  background-color: $gray-color-transparent;
+
+  &__bold-text {
+    display: inline;
+
+    @include reset-m-p;
+    padding: 2px 5px;
+
+    color: $orange-color;
+
+    background-color: $black-color;
+  }
+
+  &__name,
+  &__nickname,
+  &__occupation,
+  &__portrayed,
+  &__status,
+  &__appearance,
+  &__birthday {
+    display: inline;
+
+    @include reset-m-p;
+    margin: 5px 0px;
+    padding: 2px 5px 2px 0px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: left;
+
+    background-color: rgba(0, 0, 0, 0.10);
+  }
+
+  &__photo {
+    display: block;
+
+    height: 250px;
+    width: 250px;
+
+    @include reset-m-p;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+}

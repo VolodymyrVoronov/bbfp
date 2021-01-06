@@ -1,0 +1,10 @@
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: block;
+
+  @include reset-m-p;
+}

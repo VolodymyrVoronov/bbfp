@@ -1,0 +1,33 @@
+$orange-color: #efc326;
+$black-color: #000000;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.main-page-container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  min-width: 1200px;
+
+  @include reset-m-p;
+
+  background-image: url("../../assets/bg-images-start-page/bg-image-4.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  user-select: none;
+
+  box-shadow: inset 0 0 50px 15px $black-color;
+
+  overflow: hidden;
+
+  &__preloader-block {
+    padding-top: 10px;
+  }
+}
