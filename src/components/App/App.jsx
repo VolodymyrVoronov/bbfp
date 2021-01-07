@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import StartPage from "./../StartPage/StartPage";
 import MainPage from "./../MainPage/MainPage";
+import { WarningPage } from "../WarningPage/WarningPage";
 
 import "./App.scss";
 
@@ -22,7 +23,7 @@ const App = (props) => {
           {isStartPageClicked ? <MainPage /> : <StartPage />}
         </React.Fragment>
       ) : (
-        `Not good`
+        <WarningPage />
       )}
     </div>
   );

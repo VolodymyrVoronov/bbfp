@@ -1,0 +1,63 @@
+$orange-color: #efc326;
+$black-color: #000000;
+$gray-color-transparent: #c5c5c581;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.warning-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  @include reset-m-p;
+
+  background-image: url('../../assets/bg-warning-page/bg-image-1.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  box-shadow: inset 0 0 75px 15px $black-color;
+
+  &__title {
+    display: block;
+
+    @include reset-m-p;
+    padding: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    text-align: center;
+
+    color: $orange-color;
+    background-color: $black-color;
+
+    user-select: none;
+  }
+
+  &__text {
+    display: block;
+
+    @include reset-m-p;
+    margin-top: 25px;
+    padding: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    text-align: center;
+
+    color: $orange-color;
+    background-color: $black-color;
+
+    user-select: none;
+  }
+}
