@@ -1,7 +1,6 @@
 import {
   SET_START_PAGE_CLICKED,
   GET_RANDOM_CHARACTER,
-  SET_NAV_CLICKED,
   IS_RANDOM_CHARACTER_LOADING,
   GET_ALL_CHARACTERS,
   GET_SEARCHED_CHARACTER,
@@ -18,10 +17,6 @@ import {
 
 export const setStartPageClickedAC = () => ({
   type: SET_START_PAGE_CLICKED,
-});
-
-export const setNavClickedAC = () => ({
-  type: SET_NAV_CLICKED,
 });
 
 export const getRandomCharacterAC = (randomCharacter) => ({

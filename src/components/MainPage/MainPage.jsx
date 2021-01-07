@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { Switch, Route, Redirect } from "react-router-dom";
 
@@ -48,6 +49,14 @@ const MainPage = (props) => {
       </Switch>
     </div>
   );
+};
+
+MainPage.propTypes = {
+  isStartDataLoading: PropTypes.bool.isRequired,
+};
+
+MainPage.defaultProps = {
+  isStartDataLoading: false,
 };
 
 export default MainPage;

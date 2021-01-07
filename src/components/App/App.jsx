@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import StartPage from "./../StartPage/StartPage";
 import MainPage from "./../MainPage/MainPage";
@@ -27,6 +28,14 @@ const App = (props) => {
       )}
     </div>
   );
+};
+
+App.propTypes = {
+  isStartPageClicked: PropTypes.bool.isRequired,
+};
+
+App.defaultProps = {
+  isStartPageClicked: false,
 };
 
 export default App;

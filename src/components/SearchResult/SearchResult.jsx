@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { CSSTransition } from "react-transition-group";
 
@@ -96,5 +97,29 @@ const SearchResult = React.memo((props) => {
     </Fade>
   );
 });
+
+SearchResult.propTypes = {
+  appearance: PropTypes.array.isRequired,
+  img: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  birthday: PropTypes.number.isRequired,
+  nickname: PropTypes.string.isRequired,
+  occupation: PropTypes.array.isRequired,
+  portrayed: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  char_id: PropTypes.number.isRequired,
+};
+
+SearchResult.defaultProps = {
+  appearance: [],
+  img: ``,
+  name: ``,
+  birthday: 0,
+  nickname: ``,
+  occupation: [],
+  portrayed: ``,
+  status: ``,
+  char_id: 0,
+};
 
 export default SearchResult;

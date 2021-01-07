@@ -1,14 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Preloader from "../UI/Preloader/Preloader";
 
 import "./AllCharacters.scss";
 
 const AllCharacters = (props) => {
-  const dispatch = useDispatch();
-
   const { allCharacters } = useSelector(({ app }) => app);
 
   const [maxRange, setMaxRange] = React.useState(6);
@@ -102,6 +101,38 @@ const AllCharacters = (props) => {
       </section>
     </React.Fragment>
   );
+};
+
+AllCharacters.propTypes = {
+  allCharacters: PropTypes.arrayOf(
+    PropTypes.shape({
+      appearance: PropTypes.array.isRequired,
+      img: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      birthday: PropTypes.number.isRequired,
+      nickname: PropTypes.string.isRequired,
+      occupation: PropTypes.array.isRequired,
+      portrayed: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      char_id: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
+};
+
+AllCharacters.defaultProps = {
+  allCharacters: [
+    {
+      appearance: [],
+      img: ``,
+      name: ``,
+      birthday: 0,
+      nickname: ``,
+      occupation: [],
+      portrayed: ``,
+      status: ``,
+      char_id: 0,
+    },
+  ],
 };
 
 export default AllCharacters;

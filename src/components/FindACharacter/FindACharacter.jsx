@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -82,6 +83,42 @@ const FindACharacter = (props) => {
       ) : null}
     </div>
   );
+};
+
+FindACharacter.propTypes = {
+  searchedCharacter: PropTypes.arrayOf(
+    PropTypes.shape({
+      appearance: PropTypes.array.isRequired,
+      img: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      birthday: PropTypes.number.isRequired,
+      nickname: PropTypes.string.isRequired,
+      occupation: PropTypes.array.isRequired,
+      portrayed: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      char_id: PropTypes.number.isRequired,
+    })
+  ),
+
+  isSearching: PropTypes.bool.isRequired,
+};
+
+FindACharacter.defaultProps = {
+  searchedCharacter: [
+    {
+      appearance: [],
+      img: ``,
+      name: ``,
+      birthday: 0,
+      nickname: ``,
+      occupation: [],
+      portrayed: ``,
+      status: ``,
+      char_id: 0,
+    },
+  ],
+
+  isSearching: false,
 };
 
 export default FindACharacter;

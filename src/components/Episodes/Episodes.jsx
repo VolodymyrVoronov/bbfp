@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Preloader from "../UI/Preloader/Preloader";
 
@@ -80,6 +81,32 @@ const Episodes = (props) => {
       </div>
     </React.Fragment>
   );
+};
+
+Episodes.propTypes = {
+  allEpisodes: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      air_date: PropTypes.string.isRequired,
+      episode: PropTypes.string.isRequired,
+      season: PropTypes.string.isRequired,
+      characters: PropTypes.array.isRequired,
+      episode_id: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
+};
+
+Episodes.defaultProps = {
+  allEpisodes: [
+    {
+      title: ``,
+      air_date: ``,
+      episode: ``,
+      season: ``,
+      characters: [],
+      episode_id: 0,
+    },
+  ],
 };
 
 export default Episodes;

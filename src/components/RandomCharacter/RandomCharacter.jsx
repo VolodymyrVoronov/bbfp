@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -67,7 +68,7 @@ const RandomCharacter = React.memo((props) => {
                 className="character__random-character-btn"
                 type="button"
               >
-                Get random character
+                Random character
               </button>
               <br />
             </div>
@@ -85,5 +86,37 @@ const RandomCharacter = React.memo((props) => {
     </div>
   );
 });
+
+RandomCharacter.propTypes = {
+  randomCharacter: PropTypes.arrayOf(
+    PropTypes.shape({
+      appearance: PropTypes.array.isRequired,
+      img: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      nickname: PropTypes.string.isRequired,
+      occupation: PropTypes.array.isRequired,
+      portrayed: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+
+  isRandomCharacterLoading: PropTypes.bool.isRequired,
+};
+
+RandomCharacter.defaultProps = {
+  randomCharacter: [
+    {
+      appearance: [],
+      img: ``,
+      name: ``,
+      nickname: ``,
+      occupation: [],
+      portrayed: ``,
+      status: ``,
+    },
+  ],
+
+  isRandomCharacterLoading: false,
+};
 
 export default RandomCharacter;

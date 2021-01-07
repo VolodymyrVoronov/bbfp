@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -34,15 +35,11 @@ const Quotes = (props) => {
   ];
 
   const getQuotes = (quotes, filteredQuotes) => {
-    let qoutes = [];
-
     if (filteredQuotes.length === 0) {
-      qoutes = quotes;
+      return quotes;
     } else {
-      qoutes = filteredQuotes;
+      return filteredQuotes;
     }
-
-    return qoutes;
   };
 
   return (
@@ -97,6 +94,62 @@ const Quotes = (props) => {
       </section>
     </div>
   );
+};
+
+Quotes.propTypes = {
+  randomQuote: PropTypes.arrayOf(
+    PropTypes.shape({
+      quote_id: PropTypes.number.isRequired,
+      quote: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+
+  isRandomQuoteLoading: PropTypes.bool.isRequired,
+
+  quotes: PropTypes.arrayOf(
+    PropTypes.shape({
+      quote_id: PropTypes.number.isRequired,
+      quote: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+
+  filteredQuotes: PropTypes.arrayOf(
+    PropTypes.shape({
+      quote_id: PropTypes.number.isRequired,
+      quote: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+};
+
+Quotes.defaultProps = {
+  randomQuote: [
+    {
+      quote_id: 0,
+      quote: ``,
+      author: ``,
+    },
+  ],
+
+  isRandomQuoteLoading: false,
+
+  quotes: [
+    {
+      quote_id: 0,
+      quote: ``,
+      author: ``,
+    },
+  ],
+
+  filteredQuotes: [
+    {
+      quote_id: 0,
+      quote: ``,
+      author: ``,
+    },
+  ],
 };
 
 export default Quotes;

@@ -16,7 +16,6 @@ import {
 import {
   SET_START_PAGE_CLICKED,
   GET_RANDOM_CHARACTER,
-  SET_NAV_CLICKED,
   IS_RANDOM_CHARACTER_LOADING,
   GET_ALL_CHARACTERS,
   GET_SEARCHED_CHARACTER,
@@ -33,7 +32,6 @@ import {
 
 const initialState = {
   isStartPageClicked: false,
-  isNavClicked: false,
   randomCharacter: [],
   isRandomCharacterLoading: false,
   allCharacters: [],
@@ -54,12 +52,6 @@ const appReducer = (state = initialState, action) => {
       return {
         ...state,
         isStartPageClicked: true,
-      };
-
-    case SET_NAV_CLICKED:
-      return {
-        ...state,
-        isNavClicked: true,
       };
 
     case GET_RANDOM_CHARACTER:

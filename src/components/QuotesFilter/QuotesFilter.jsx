@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -55,5 +56,15 @@ const QuotesFilter = React.memo((props) => {
     </div>
   );
 });
+
+QuotesFilter.propTypes = {
+  activeFilterButtonIndex: PropTypes.number.isRequired,
+  authorsOfQuotes: PropTypes.array.isRequired,
+};
+
+QuotesFilter.defaultProps = {
+  activeFilterButtonIndex: 0,
+  authorsOfQuotes: [],
+};
 
 export default QuotesFilter;
