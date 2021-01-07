@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/bbfp/static/css/main.96946c34.chunk.css",
-    "main.js": "/bbfp/static/js/main.92544c3e.chunk.js",
-    "main.js.map": "/bbfp/static/js/main.92544c3e.chunk.js.map",
-    "runtime-main.js": "/bbfp/static/js/runtime-main.6c374435.js",
-    "runtime-main.js.map": "/bbfp/static/js/runtime-main.6c374435.js.map",
-    "static/js/2.255aa2eb.chunk.js": "/bbfp/static/js/2.255aa2eb.chunk.js",
-    "static/js/2.255aa2eb.chunk.js.map": "/bbfp/static/js/2.255aa2eb.chunk.js.map",
-    "static/js/3.284d533d.chunk.js": "/bbfp/static/js/3.284d533d.chunk.js",
-    "static/js/3.284d533d.chunk.js.map": "/bbfp/static/js/3.284d533d.chunk.js.map",
+    "main.css": "/bbfp/static/css/main.0b7c32bb.chunk.css",
+    "main.js": "/bbfp/static/js/main.1ec1019f.chunk.js",
+    "main.js.map": "/bbfp/static/js/main.1ec1019f.chunk.js.map",
+    "runtime-main.js": "/bbfp/static/js/runtime-main.8bad6b53.js",
+    "runtime-main.js.map": "/bbfp/static/js/runtime-main.8bad6b53.js.map",
+    "static/js/2.99c9b135.chunk.js": "/bbfp/static/js/2.99c9b135.chunk.js",
+    "static/js/2.99c9b135.chunk.js.map": "/bbfp/static/js/2.99c9b135.chunk.js.map",
+    "static/js/3.c1f34a57.chunk.js": "/bbfp/static/js/3.c1f34a57.chunk.js",
+    "static/js/3.c1f34a57.chunk.js.map": "/bbfp/static/js/3.c1f34a57.chunk.js.map",
     "index.html": "/bbfp/index.html",
-    "static/css/main.96946c34.chunk.css.map": "/bbfp/static/css/main.96946c34.chunk.css.map",
-    "static/js/2.255aa2eb.chunk.js.LICENSE.txt": "/bbfp/static/js/2.255aa2eb.chunk.js.LICENSE.txt",
+    "static/css/main.0b7c32bb.chunk.css.map": "/bbfp/static/css/main.0b7c32bb.chunk.css.map",
+    "static/js/2.99c9b135.chunk.js.LICENSE.txt": "/bbfp/static/js/2.99c9b135.chunk.js.LICENSE.txt",
+    "static/media/WarningPage.scss": "/bbfp/static/media/bg-image-1.20918236.jpg",
     "static/media/NothingFound.scss": "/bbfp/static/media/bg-image-1.c1cd6f04.png",
     "static/media/bg-image-1.e00dc60f.jpg": "/bbfp/static/media/bg-image-1.e00dc60f.jpg",
     "static/media/bg-image-10.cbdc2aec.jpg": "/bbfp/static/media/bg-image-10.cbdc2aec.jpg",
@@ -27,9 +28,9 @@
     "static/media/bg-image-9.09647c82.jpg": "/bbfp/static/media/bg-image-9.09647c82.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6c374435.js",
-    "static/js/2.255aa2eb.chunk.js",
-    "static/css/main.96946c34.chunk.css",
-    "static/js/main.92544c3e.chunk.js"
+    "static/js/runtime-main.8bad6b53.js",
+    "static/js/2.99c9b135.chunk.js",
+    "static/css/main.0b7c32bb.chunk.css",
+    "static/js/main.1ec1019f.chunk.js"
   ]
 }
