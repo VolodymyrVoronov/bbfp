@@ -4,44 +4,30 @@ import { NavLink } from "react-router-dom";
 
 import "./HeaderNav.scss";
 
+const routes = [
+  { path: "/random-character", name: "Random character" },
+  { path: "/all-characters", name: "All characters" },
+  { path: "/find-a-character", name: "Find a character" },
+  { path: "/episodes", name: "Episodes" },
+  { path: "/quotes", name: "Quotes" },
+];
+
 const HeaderNav = React.memo((prosp) => {
   return (
     <div className="header-nav-container">
-      <NavLink
-        to="/random-character"
-        className="header-nav-container__nav-btn"
-        activeClassName="active-nav-btn"
-      >
-        Random character
-      </NavLink>
-      <NavLink
-        to="/all-characters"
-        className="header-nav-container__nav-btn"
-        activeClassName="active-nav-btn"
-      >
-        All characters
-      </NavLink>
-      <NavLink
-        to="/find-a-character"
-        className="header-nav-container__nav-btn"
-        activeClassName="active-nav-btn"
-      >
-        Find a character
-      </NavLink>
-      <NavLink
-        to="/episodes"
-        className="header-nav-container__nav-btn"
-        activeClassName="active-nav-btn"
-      >
-        Episodes
-      </NavLink>
-      <NavLink
-        to="/quotes"
-        className="header-nav-container__nav-btn"
-        activeClassName="active-nav-btn"
-      >
-        Quotes
-      </NavLink>
+      {routes.map((route, index) => {
+        const { path, name } = route;
+        return (
+          <NavLink
+            key={name + index}
+            to={path}
+            className="header-nav-container__nav-btn"
+            activeClassName="active-nav-btn"
+          >
+            {name}
+          </NavLink>
+        );
+      })}
     </div>
   );
 });

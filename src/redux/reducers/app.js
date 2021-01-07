@@ -1,3 +1,5 @@
+import { STATUS_CODE } from "../../const";
+
 import { appAPI } from "./../../api/api";
 
 import {
@@ -75,7 +77,9 @@ const appReducer = (state = initialState, action) => {
     case GET_SEARCHED_CHARACTER:
       return {
         ...state,
-        searchedCharacter: action.searchedCharacter,
+        searchedCharacter: action.searchedCharacter.filter((character) =>
+          character.category.includes(`Breaking Bad`)
+        ),
       };
 
     case IS_SEARCHING:
@@ -148,7 +152,7 @@ export const getRandomCharacter = () => async (dispatch) => {
   try {
     dispatch(isRandomCharacterLoadingAC(true));
     const response = await appAPI.getRandomCharacter();
-    if (response.status === 200) {
+    if (response.status === STATUS_CODE.SUCCESS) {
       dispatch(getRandomCharacterAC(response.data[0]));
       dispatch(isRandomCharacterLoadingAC(false));
     }
@@ -161,7 +165,7 @@ export const getSearchedCharacter = (searchedCharacter) => async (dispatch) => {
   try {
     dispatch(isSearchingAC(true));
     const response = await appAPI.getSearchedCharacter(searchedCharacter);
-    if (response.status === 200) {
+    if (response.status === STATUS_CODE.SUCCESS) {
       dispatch(getSearchedCharacterAC(response.data));
       dispatch(isSearchingAC(false));
     }
@@ -174,7 +178,7 @@ export const getRandomQuote = () => async (dispatch) => {
   try {
     dispatch(isRandomQuoteLoadingAC(true));
     const response = await appAPI.getRandomQuote();
-    if (response.status === 200) {
+    if (response.status === STATUS_CODE.SUCCESS) {
       dispatch(getRandomQuoteAC(response.data));
       dispatch(isRandomQuoteLoadingAC(false));
     }
@@ -188,27 +192,27 @@ export const getStartData = () => async (dispatch) => {
     dispatch(isStartDataLoadingAC(true));
 
     const responseRandomCharacter = await appAPI.getRandomCharacter();
-    if (responseRandomCharacter.status === 200) {
+    if (responseRandomCharacter.status === STATUS_CODE.SUCCESS) {
       dispatch(getRandomCharacterAC(responseRandomCharacter.data[0]));
     }
     const responseAllCharaters = await appAPI.getAllCharaters();
 
-    if (responseAllCharaters.status === 200) {
+    if (responseAllCharaters.status === STATUS_CODE.SUCCESS) {
       dispatch(getAllCharactersAC(responseAllCharaters.data));
     }
 
     const responseAllEpisodes = await appAPI.getAllEpisodes();
-    if (responseAllEpisodes.status === 200) {
+    if (responseAllEpisodes.status === STATUS_CODE.SUCCESS) {
       dispatch(getAllEpisodesAC(responseAllEpisodes.data));
     }
 
     const responseRandomQuote = await appAPI.getRandomQuote();
-    if (responseRandomQuote.status === 200) {
+    if (responseRandomQuote.status === STATUS_CODE.SUCCESS) {
       dispatch(getRandomQuoteAC(responseRandomQuote.data));
     }
 
     const responseAllQuotes = await appAPI.getAllQuotes();
-    if (responseAllQuotes.status === 200) {
+    if (responseAllQuotes.status === STATUS_CODE.SUCCESS) {
       dispatch(getAllQuotesAC(responseAllQuotes.data));
     }
 
