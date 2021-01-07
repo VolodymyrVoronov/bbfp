@@ -2,6 +2,9 @@ import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
+
 import { getRandomQuote } from "./../../redux/reducers/app";
 
 import QuotesFilter from "./../QuotesFilter/QuotesFilter";
@@ -51,14 +54,16 @@ const Quotes = (props) => {
         {isRandomQuoteLoading ? (
           <Preloader />
         ) : (
-          <figure className="random-quote__body">
-            <blockquote lang="en" className="random-quote__text">
-              <q>{quote}</q>
-            </blockquote>
-            <figcaption className="random-quote__author">
-              &mdash; {author}
-            </figcaption>
-          </figure>
+          <Zoom>
+            <figure className="random-quote__body">
+              <blockquote lang="en" className="random-quote__text">
+                <q>{quote}</q>
+              </blockquote>
+              <figcaption className="random-quote__author">
+                &mdash; {author}
+              </figcaption>
+            </figure>
+          </Zoom>
         )}
 
         <button
@@ -76,14 +81,16 @@ const Quotes = (props) => {
           {getQuotes(quotes, filteredQuotes).map((quoteItem) => {
             const { quote_id, quote, author } = quoteItem;
             return (
-              <div key={quote_id} className="quote-block__body">
-                <blockquote lang="en" className="quote-block__text">
-                  <q>{quote}</q>
-                </blockquote>
-                <figcaption className="quote-block__author">
-                  &mdash; {author}
-                </figcaption>
-              </div>
+              <Fade key={quote_id} cascade>
+                <div className="quote-block__body">
+                  <blockquote lang="en" className="quote-block__text">
+                    <q>{quote}</q>
+                  </blockquote>
+                  <figcaption className="quote-block__author">
+                    &mdash; {author}
+                  </figcaption>
+                </div>
+              </Fade>
             );
           })}
         </div>

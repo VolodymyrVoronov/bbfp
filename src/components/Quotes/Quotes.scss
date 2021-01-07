@@ -25,9 +25,9 @@ $black-color-transparent: #0000003b;
 }
 
 .quotes-container {
-  // display: flex;
+  display: flex;
 
-  // @include reset-m-p;
+  @include reset-m-p;
 }
 
 .quotes {
@@ -41,6 +41,8 @@ $black-color-transparent: #0000003b;
   padding: 15px;
   padding-bottom: 75px;
 
+  background-color: $gray-color-transparent;
+
   user-select: text;
 
   &__left {
@@ -49,18 +51,14 @@ $black-color-transparent: #0000003b;
     width: 29%;
 
     @include reset-m-p;
-
-    background-color: $gray-color-transparent;
   }
 
   &__right {
     display: flex;
 
-    width: 70%;
+    width: 69%;
 
     @include reset-m-p;
-
-    background-color: $gray-color-transparent;
   }
 }
 

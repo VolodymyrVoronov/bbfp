@@ -15,11 +15,11 @@ import "./index.scss";
 
 ReactDOM.render(
   <HashRouter>
-    <React.StrictMode>
+    <React.Fragment>
       <Provider store={store}>
         <App />
       </Provider>
-    </React.StrictMode>
+    </React.Fragment>
   </HashRouter>,
   document.getElementById("root")
 );

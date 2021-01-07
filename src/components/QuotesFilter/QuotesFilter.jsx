@@ -10,7 +10,7 @@ import {
 
 import "./QuotesFilter.scss";
 
-const QuotesFilter = (props) => {
+const QuotesFilter = React.memo((props) => {
   const dispatch = useDispatch();
 
   const { activeFilterButtonIndex } = useSelector(({ app }) => app);
@@ -54,6 +54,6 @@ const QuotesFilter = (props) => {
       ))}
     </div>
   );
-};
+});
 
 export default QuotesFilter;
