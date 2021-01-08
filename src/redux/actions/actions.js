@@ -13,6 +13,7 @@ import {
   SET_ACTIVE_FILTER_BUTTON_INDEX,
   GET_FILTERED_QUOTES,
   SET_ALL_QUOTES,
+  IS_ERROR_OCCURED,
 } from "./actionTypes";
 
 export const setStartPageClickedAC = () => ({
@@ -81,4 +82,9 @@ export const getFilteredQuotesAC = (character) => ({
 
 export const setAllQuotesAC = () => ({
   type: SET_ALL_QUOTES,
+});
+
+export const isErrorOccuredAC = (isErrorOccured) => ({
+  type: IS_ERROR_OCCURED,
+  isErrorOccured,
 });

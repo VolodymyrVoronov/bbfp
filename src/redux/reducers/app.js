@@ -13,6 +13,7 @@ import {
   isRandomQuoteLoadingAC,
   getAllQuotesAC,
   isStartDataLoadingAC,
+  isErrorOccuredAC,
 } from "../actions/actions";
 
 import {
@@ -30,6 +31,7 @@ import {
   SET_ACTIVE_FILTER_BUTTON_INDEX,
   GET_FILTERED_QUOTES,
   SET_ALL_QUOTES,
+  IS_ERROR_OCCURED,
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -46,6 +48,7 @@ const initialState = {
   isStartDataLoading: false,
   activeFilterButtonIndex: 0,
   filteredQuotes: [],
+  isErrorOccured: false,
 };
 
 const appReducer = (state = initialState, action) => {
@@ -142,6 +145,12 @@ const appReducer = (state = initialState, action) => {
         filteredQuotes: [...state.quotes],
       };
 
+    case IS_ERROR_OCCURED:
+      return {
+        ...state,
+        isErrorOccured: action.isErrorOccured,
+      };
+
     default:
       return state;
   }
@@ -158,6 +167,7 @@ export const getRandomCharacter = () => async (dispatch) => {
     }
   } catch (error) {
     console.log(error);
+    dispatch(isErrorOccuredAC(true));
   }
 };
 
@@ -171,6 +181,7 @@ export const getSearchedCharacter = (searchedCharacter) => async (dispatch) => {
     }
   } catch (error) {
     console.log(error);
+    dispatch(isErrorOccuredAC(true));
   }
 };
 
@@ -184,6 +195,7 @@ export const getRandomQuote = () => async (dispatch) => {
     }
   } catch (error) {
     console.log(error);
+    dispatch(isErrorOccuredAC(true));
   }
 };
 
@@ -219,6 +231,7 @@ export const getStartData = () => async (dispatch) => {
     dispatch(isStartDataLoadingAC(false));
   } catch (error) {
     console.log(error);
+    dispatch(isErrorOccuredAC(true));
   }
 };
 

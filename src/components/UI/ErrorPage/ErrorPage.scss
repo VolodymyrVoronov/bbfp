@@ -1,0 +1,70 @@
+$orange-color: #efc326;
+$black-color: #000000;
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.error-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100%;
+
+  @include reset-m-p;
+
+  background-image: url("../../../assets/images-error-page/bg-image-1.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  user-select: none;
+
+  user-select: none;
+
+  box-shadow: inset 0 0 75px 15px $black-color;
+
+  &__title {
+    display: block;
+
+    @include reset-m-p;
+    padding: 10px 15px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+
+    color: $orange-color;
+    background-color: $black-color;
+  }
+
+  &__text {
+    display: block;
+
+    @include reset-m-p;
+    padding: 10px 15px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+
+    color: $orange-color;
+    background-color: $black-color;
+  }
+
+  &__image {
+    display: block;
+
+    @include reset-m-p;
+    margin: 20px 0;
+
+    outline: 5px solid $orange-color;
+  }
+}

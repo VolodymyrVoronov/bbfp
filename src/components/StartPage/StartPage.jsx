@@ -7,6 +7,8 @@ import { useHistory } from "react-router-dom";
 import { setStartPageClickedAC } from "./../../redux/actions/actions";
 import { getStartData } from "./../../redux/reducers/app";
 
+import { KEY_CODE } from "./../../const";
+
 import { getRandomBackgroundImage } from "../../utils/getRandomBackgroundImage";
 
 import "./StartPage.scss";
@@ -15,6 +17,29 @@ const StartPage = (props) => {
   const dispatch = useDispatch();
 
   const history = useHistory();
+
+  const onKeyDown = (e) => {
+    if (e.keyCode === KEY_CODE.ENTER || e.keyCode === KEY_CODE.SPACE) {
+      dispatch(setStartPageClickedAC());
+      dispatch(getStartData());
+
+      history.push("/information-about-portal");
+    }
+  };
+
+  const cbRef = React.useRef(onKeyDown);
+
+  React.useEffect(() => {
+    cbRef.current = onKeyDown;
+  });
+
+  React.useEffect(() => {
+    const cb = (e) => cbRef.current(e);
+    window.addEventListener("keydown", cb);
+    return () => {
+      window.removeEventListener("keydown", cb);
+    };
+  }, []);
 
   const onEnterButtonClickHandler = (params) => {
     dispatch(setStartPageClickedAC());

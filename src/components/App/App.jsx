@@ -6,11 +6,12 @@ import { useSelector } from "react-redux";
 import StartPage from "./../StartPage/StartPage";
 import MainPage from "./../MainPage/MainPage";
 import { WarningPage } from "../WarningPage/WarningPage";
+import ErrorPage from "../UI/ErrorPage/ErrorPage";
 
 import "./App.scss";
 
 const App = (props) => {
-  const { isStartPageClicked } = useSelector(({ app }) => app);
+  const { isStartPageClicked, isErrorOccured } = useSelector(({ app }) => app);
 
   const widthOfTheScreen =
     window.innerWidth ||
@@ -19,12 +20,18 @@ const App = (props) => {
 
   return (
     <div className="app-container">
-      {widthOfTheScreen >= 1024 ? (
-        <React.Fragment>
-          {isStartPageClicked ? <MainPage /> : <StartPage />}
-        </React.Fragment>
+      {isErrorOccured ? (
+        <ErrorPage />
       ) : (
-        <WarningPage />
+        <>
+          {widthOfTheScreen >= 1024 ? (
+            <React.Fragment>
+              {isStartPageClicked ? <MainPage /> : <StartPage />}
+            </React.Fragment>
+          ) : (
+            <WarningPage />
+          )}
+        </>
       )}
     </div>
   );
